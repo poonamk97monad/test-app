@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap');
+
+* {margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+body{background-color:#f5f8f9; font-family: 'Inter', sans-serif; font-weight:300; color:#5a5a5b; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+h1, h2, h3 {color: #222c37; font-weight: 300; }
+h1 {font-size: 1.75em; line-height: 1em; margin: 0 0 20px 0; }
+h2 {font-size: 1.75em; line-height: 1.2em; margin: 0 0 20px 0; }
+h3 {font-size: 1.5em; line-height: 1.2em; margin: 0 0 15px 0; }
+h4 {font-size: 1.25em; line-height: 1.3em; font-weight: 500; margin: 0 0 10px 0; }
+p {font-size: 1em; line-height: 1.5em; margin: 0 0 15px 0; }
+small {font-size: 0.8125em; line-height: 1.3em; margin: 0 0 10px 0; display: block; }
+address {font-size: 1em; line-height: 1.5em; margin: 0 0 15px 0; font-weight: 300; white-space: pre-wrap; word-break: break-word; }
+ul {list-style-type: none; margin: 0 0 15px 0; padding:0;}
+ul li, 
+ol li,
+ol ul li {font-size: 1em; }
+ul li {padding: 0 0 4px 20px; background: none; position: relative;}
+ul li::before {content: "\2022"; font-size: 1.75em; line-height:1; position: absolute; top:-5px; left: 0; color: #5a5a5b; }
+
+.main-wrapper .main-content{flex-grow:1;}
+.sidebar-navigation{max-width:280px; width:100%; flex-shrink:0; padding:30px 0 30px 60px;}
+.sidebar-navigation ul li{margin:0 0 20px 0; padding:0; font-size:1.125em;}
+.sidebar-navigation ul li::before{display:none;}
+.sidebar-navigation ul li a{color:#222c37; text-decoration:none;}
+.sidebar-navigation ul li a:hover,
+.sidebar-navigation ul li a.selected{color:#00bcd4;}
+.sidebar-navigation ul ul{background-color:#FFF; list-style:none; padding:20px 0 5px 0; margin-top:15px; position:relative;}
+.sidebar-navigation ul ul::before{content:""; display:block; position:absolute; top:-20px; left:15px; border:transparent 10px solid; border-bottom-color:#fff;}
+.sidebar-navigation ul ul li{font-size:0.875em; margin-bottom:15px; padding:0 20px;}
+.sidebar-navigation .badge{border:1px solid #F00; color:#F00; font-weight:300; font-size:inherit; padding:0 2px; border-radius:2px;}
+.sidebar-navigation small{font-size:0.8125em; line-height:1.3em; margin-bottom:10px; display:block;}
+
+
+.main-content{padding:30px;}
+.page-title{margin-bottom:10px; display:flex; align-items:center;}
+.page-title .left{flex-grow:1;}
+.page-title .action-btns .btn{padding:4px 15px;}
+.page-title .action-btns .btn ~ .btn{margin-left:10px;}
+
+.card{border:none; border-radius:0; margin-bottom:30px;}
+.card-form-view .card-header{background-color:#FFF; padding:30px; border-bottom:1px solid #f5f8f9; position:relative;}
+.card-form-view .card-header h4{font-size:1.25em; font-weight:300; padding-right:30px; margin-bottom:0;}
+.card-form-view .card-body {padding:0;}
+.card-form-view .item{background-color:#FFF; line-height:1.25; display:flex; padding:20px 0; border-bottom:1px solid #f5f8f9; position:relative; z-index:2; transition:all .1s;}
+.card-form-view .item::before{content:""; display:block; position:absolute; top:0; bottom:0; left:0; right:0; z-index:-1; transition:all .1s;}
+.card-form-view .item:hover{box-shadow:0 0 14px rgb(34 44 55 / 25%); z-index:3;}
+.card-form-view .item:hover::before{box-shadow:0 0 0 4px #fff;}
+.card-form-view .item-key{width:25%; padding-left:30px; font-weight:400; color:#222c37; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.card-form-view .item-value{flex-grow:1; padding-right:105px;}
+
+.card-form-view .item-collapse{width:100%; font-weight:400;}
+
+.card .accordion-body{padding:10px 30px 0 30px}
+.card .accordion-item{background-color:transparent; border:none;}
+.card .accordion-header{line-height:1.25;}
+.card .accordion-button{padding:0 105px 0 30px; font-size:1rem;}
+.card .accordion-button::after{position:absolute; right:27px;}
+.card .accordion-button:not(.collapsed){background-color:transparent; color:#212529; box-shadow:none;}
+.card .accordion-button:focus{box-shadow:none;}
+

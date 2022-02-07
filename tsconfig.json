@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "baseUrl": ".",
+    "rootDir": ".",
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    // This defaults to false, making it easier to work with TypeScript in a watch-like environment where you may want
+    // to see results of changes to your code in another environment before making sure all errors are resolved.
+    "noEmitOnError": false,
+    "sourceMap": true,
+
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "suppressImplicitAnyIndexErrors": true,
+
+    // Import non-es modules as default imports
+    "esModuleInterop": true,
+    "experimentalDecorators": false,
+    "emitDecoratorMetadata": false,
+    // Need this for proper file watching
+    "importsNotUsedAsValues": "preserve",
+    "incremental": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+
+    "paths": {
+      "@apps/*": ["src/apps/*"],
+      "@shared/*": ["src/shared/*"],
+      "@react-router": ["src/shared/core/router.helper/reactRouter.tsx"],
+      "@static/*": ["src/static/*"]
+    }
+  },
+  "include": ["*"]
+}
