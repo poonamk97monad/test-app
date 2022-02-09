@@ -5,7 +5,7 @@ import {usePackageController} from "./PackageEdit.controller";
 
 export interface Props {}
 export const Info: React.FC<Props> =() => {
-     const {formik,loading} = usePackageController();
+    const {formik,loading,categories} = usePackageController();
     const [inputField , setInputField] = useState({
         summary: '',
         description: '',
@@ -21,6 +21,19 @@ export const Info: React.FC<Props> =() => {
             {formik.errors.name && (                
                 <div className="text-danger">{formik.errors.name}</div>
              )}
+              
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="summary">
+          <InputLabel>Categories: </InputLabel>
+            <Form.Select  {...formik.getFieldProps('categorie')} name="categorie" >
+            {categories.map((categorie) => (
+              <option value={categorie.id} key={categorie.id}>{categorie.title}</option>
+            ))}
+          
+            {formik.errors.categorie && (                
+                <div className="text-danger">{formik.errors.categorie}</div>
+             )}
+          </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="summary">
           <InputLabel>Summary: </InputLabel>
@@ -43,6 +56,7 @@ export const Info: React.FC<Props> =() => {
                 <div className="text-danger">{formik.errors.technical_details}</div>
              )}
           </Form.Group>
+          
           <Button variant="primary" type="submit" disabled={loading}> Save </Button>
       </Form>
 

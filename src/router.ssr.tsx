@@ -1,5 +1,5 @@
 import type { RoutePath } from "@shared/core/router.helper/useRouterHelper";
-import { Home, ProductLanding, ProductApp, AuthApp, ProfileApp } from "@apps";
+import { Home, ProductApp, AuthApp, ProfileApp } from "@apps";
 
 function NotFound() {
   return <h1>404 Page Not Found</h1>;
@@ -12,12 +12,8 @@ export const ssrRoutes: Array<RoutePath<{}>> = [
     component: () => <Home name="home" />,
   },
   {
-    path: "/products/:id",
-    component: (props) => <ProductLanding name="product" {...props} />,
-  },
-  {
     path: "/product",
-    component: () => <ProductApp name="product" />,
+    component: () => <ProductApp appUrl="product" />,
   },
   {
     path: "/account",

@@ -20,7 +20,7 @@ export const PackageEdit: React.FC =() => {
     
       const handleSubmit = (event:any) => {
         event.preventDefault();
-        //logic to create new user...
+       
       };
     return ( 
     <div className="container edit-product">

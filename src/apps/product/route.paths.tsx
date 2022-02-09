@@ -7,34 +7,39 @@ import {
   useRouterHelper,
 } from "@shared/core";
 
-import {  ProductList, ProductEdit, } from "./components";
+import {  ProductList, ProductEdit, ProductLanding } from "./components";
 
-export type RoutesNames =  "productList" | "productEdit";
+export type RoutesNames =  "productList" | "productEdit" | "productView";
 
 export const routePaths: RoutesPaths<RoutesNames> = {
+   productList: {
+    path: "list",
+    goToPath: () => "list",
+  },
   productEdit: {
-    path: "product/edit",
-    goToPath: () => "product/edit",
+    path: "edit",
+    goToPath: () => "edit",
   },
-  productList: {
-    path: "products",
-    goToPath: () => "products",
+  productView: {
+    path: ":id",
+    goToPath: () => ":id",
   },
- 
 };
 
 const RoutesSearch: React.FC = () => {
   const routeHelpers = useRouterHelper();
   const routes: Array<RoutePath<{}>> = [
     {
-      exact: true,
       path: routeHelpers.buildPath(routePaths.productList.path),
       component: ({ history }) => <ProductList />,
     },
     {
-      exact: true,
       path: routeHelpers.buildPath(routePaths.productEdit.path),
       component: ({ history }) => <ProductEdit />,
+    },
+    {
+      path: routeHelpers.buildPath(routePaths.productView.path),
+      component: (props) => <ProductLanding  {...props} />,
     },
   ];
 

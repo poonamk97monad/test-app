@@ -31,9 +31,9 @@ const MediaUpload = () => {
 
 
   const handleUploadBtnClick = () => {
-    //   if(fileInputField && fileInputField.current && fileInputField.current !== null && fileInputField !== null){
-    //     fileInputField.current.click();
-    //   }
+      if(fileInputField && fileInputField.current && fileInputField.current !== null && fileInputField !== null){
+        fileInputField.current.click();
+      }
   };
 
   const addNewFiles = (newFiles:any) => {
@@ -67,7 +67,10 @@ const MediaUpload = () => {
     setFiles({ ...files });
     callUpdateFilesCb({ ...files });
   };
-
+  const handleSubmission = () =>{
+    console.log("*******")
+    console.log(files)
+  }
   return (
     <>
       <FileUploadContainer>
@@ -118,6 +121,8 @@ const MediaUpload = () => {
           })}
         </PreviewList>
       </FilePreviewContainer>
+      <button className="btn btn-success" onClick={handleSubmission}>Submit</button>
+
     </>
   );
 };

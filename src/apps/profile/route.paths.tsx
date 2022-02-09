@@ -19,15 +19,7 @@ export const routePaths: RoutesPaths<RoutesNames> = {
   profileEdit: {
     path: "edit",
     goToPath: () => "edit",
-  },
-  productList: {
-    path: "products",
-    goToPath: () => "products",
-  },
-  productEdit: {
-    path: "product/edit",
-    goToPath: () => "products/edit",
-  },
+  }
 };
 
 const RoutesSearch: React.FC = () => {
@@ -44,7 +36,6 @@ const RoutesSearch: React.FC = () => {
       component: ({ history }) => <ProfileEdit />,
     },
     
-  
   ];
 
   return (

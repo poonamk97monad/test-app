@@ -9,9 +9,23 @@ export interface ReserveItemFields {
   description: string;
   technical_details: string;
   name:string;
+  categorie:string;
 }
 export function usePackageController() {
-  
+  const categories = [
+    {
+      id: 1,
+      title: "apple",
+    },
+    {
+      id: 2,
+      title: "bbbbb",
+    },
+    {
+      id: 3,
+      title: "cccc",
+    },
+  ];
   const [loading, setLoading] = useState(false);
 
   const submitInfo = (value) => {
@@ -36,19 +50,22 @@ export function usePackageController() {
       name:'',
       summary: '',
       description: '',
-      technical_details: ''
+      technical_details: '',
+      categorie:''
     },
     validationSchema: Yup.object<ReserveItemFields>({
       name: Yup.string().required("Name is Required"),
       summary: Yup.string().required("Summary is Required"),
       description: Yup.string().required("Description is Required"),
-      technical_details: Yup.string().required("Technical Details is Required")
+      technical_details: Yup.string().required("Technical Details is Required"),
+      categorie: Yup.string().required("categorie is Required")
     }),
     onSubmit: submitInfo
   });
   return {
     submitInfo,
     formik,
-    loading
+    loading,
+    categories
   };
 }
