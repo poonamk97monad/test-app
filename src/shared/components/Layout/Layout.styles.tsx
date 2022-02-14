@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const StyledContainer = styled.div`
-  margin-top: 130px;
+  margin-top: 78px;
   min-height: 700px;
   background: #f5f8f9;
 `;

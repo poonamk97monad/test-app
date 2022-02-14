@@ -7,9 +7,9 @@ import {
   useRouterHelper,
 } from "@shared/core";
 
-import {  ProductList, ProductEdit, ProductLanding } from "./components";
+import {  ProductList, ProductEdit, ProductLanding, ProductCreate } from "./components";
 
-export type RoutesNames =  "productList" | "productEdit" | "productView";
+export type RoutesNames =  "productList" | "productEdit" | "productView" | "productCreate";
 
 export const routePaths: RoutesPaths<RoutesNames> = {
    productList: {
@@ -23,6 +23,10 @@ export const routePaths: RoutesPaths<RoutesNames> = {
   productView: {
     path: ":id",
     goToPath: () => ":id",
+  },
+  productCreate: {
+    path: "create",
+    goToPath: () => "create",
   },
 };
 
@@ -38,9 +42,14 @@ const RoutesSearch: React.FC = () => {
       component: ({ history }) => <ProductEdit />,
     },
     {
+      path: routeHelpers.buildPath(routePaths.productCreate.path),
+      component: (props) => <ProductCreate  />,
+    },
+    {
       path: routeHelpers.buildPath(routePaths.productView.path),
       component: (props) => <ProductLanding  {...props} />,
     },
+    
   ];
 
   return (

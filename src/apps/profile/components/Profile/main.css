@@ -59,3 +59,7 @@ ul li::before {content: "\2022"; font-size: 1.75em; line-height:1; position: abs
 .card .accordion-button:not(.collapsed){background-color:transparent; color:#212529; box-shadow:none;}
 .card .accordion-button:focus{box-shadow:none;}
 
+body.modal-open{
+    overflow: revert !important;
+    padding-right: 0 !important;
+}

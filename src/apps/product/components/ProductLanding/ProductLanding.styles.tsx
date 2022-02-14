@@ -1,10 +1,13 @@
 import styled from "styled-components";
-import { Stack, Row, Col, Image } from "react-bootstrap";
+import { Stack, Row, Col, Image, Tabs, Tab } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 
 export const StyledCarousel = styled(Carousel)`
   .custom-dot-list-style {
     margin-top: 50px;
+  }
+  li::before {
+    display: none;
   }
 `;
 
@@ -13,11 +16,27 @@ export const SliderImage = styled.img`
   height: 543px;
 `;
 
-export const MiniSliderImage = styled.img`
+export const MiniSliderImageWrapper = styled.div`
   width: 96px;
   height: 64px;
   margin: 0 10px 0 0;
   cursor: pointer;
+  position: relative;
+`;
+
+export const MiniSliderImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+export const MiniSliderImageOverlay = styled.div<{ isActive?: boolean }>`
+  cursor: pointer;
+  opacity: ${({ isActive }) => (isActive ? 0 : 0.6)};
+  background: #000;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 export const ShowCount = styled.p`
@@ -125,4 +144,35 @@ export const KewordLink = styled.a`
 
 export const KeywordCol = styled(Col)`
   padding-right: 0px;
+`;
+
+export const StyledTabs = styled(Tabs)``;
+
+export const StyledTab = styled(Tab)``;
+
+export const PackageSize = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+  color: #212121;
+`;
+
+export const PackageDevider = styled.span`
+  color: #e4e4e4;
+  margin: 0 10px;
+  font-size: 20px;
+`;
+
+export const FilePreview = styled.div`
+  width: 390px;
+  height: 390px;
+  background: #c2c2c2;
+`;
+
+export const FilePreviewTitle = styled.div`
+  padding: 10px 0;
+  color: #212121;
+`;
+
+export const PakcagePreviewCol = styled(Col)`
+  margin-bottom: 30px;
 `;

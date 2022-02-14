@@ -88,6 +88,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
                 <NavLink href="/profile/edit/">Profile Edit</NavLink>
                 <NavLink href="/product/list">Product List</NavLink>
                 <NavLink href="/product/edit">Product Edit</NavLink>
+                <NavLink href="/product/create">Product Create</NavLink>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">

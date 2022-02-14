@@ -1,7 +1,8 @@
 import * as Yup from "yup";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { useFormik } from 'formik';
-
+import axios from "axios";
+import { config } from "@static/js/env.config";
 // import { useAuth } from "@shared/components/AuthProvider";
 
 export interface ReserveItemFields {
@@ -62,6 +63,30 @@ export function usePackageController() {
     }),
     onSubmit: submitInfo
   });
+  
+  const getCat = () => {
+    console.log("******fffffffffffff")
+    const payload = {};
+    axios({
+      method: "get",
+      url: "https://platform.techxr.co/categories",
+      data: payload,
+    })
+      .then(({ data }) => {
+        console.log("******")
+        console.log(data)
+      })
+      .catch((error) => {
+        console.log("******")
+        console.log(error)
+      });
+
+  };
+  useEffect(() => {
+    getCat();
+  }, []);
+
+
   return {
     submitInfo,
     formik,

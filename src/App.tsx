@@ -5,6 +5,10 @@ import { BrowserRouter, Route, Switch } from "@react-router";
 import { ssrRoutes } from "./router.ssr";
 import { AuthProvider } from "@shared/components/AuthProvider";
 import { setup } from "@shared/core";
+import axios from "axios";
+
+axios.defaults.headers['Access-Control-Allow-Origin'] = "*";
+axios.defaults.headers.common['Access-Control-Allow-Headers'] = true;
 
 export type AppProps = Readonly<
   Partial<{
